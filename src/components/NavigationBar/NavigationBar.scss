@@ -1,0 +1,36 @@
+.navigation-bar {
+    position: fixed;
+    width: 86vw;
+    height: 90px;
+    padding: 0 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    &__logo {
+        width: 280px;
+    }
+    &__links {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            li {
+                padding: 1rem 2rem;
+                a {
+                    font-size: 1.25rem;
+                    color: white;
+                    text-decoration: none;
+                    border-bottom: 5px solid transparent;
+                    padding: 1rem;
+                    &:hover {
+                        border-bottom: 5px solid #fff;
+                    }
+                }
+                &:last-child {
+                    padding: 1rem 0 1rem 2rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.music {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    padding: 3rem 5rem;
+    width: 86vw;
+    &__song {
+        border: 2px solid #ffffff33;
+        border-radius: 1rem;
+        margin-bottom: 5rem;
+        height: 240px;
+        display: flex;
+        img {
+            width: 240px;
+            height: 100%;
+        }
+    }
+    &__info {
+        padding-left: 1rem;
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            margin-top: 0.5rem;
+            font-size: 18px;
+            opacity: 0.5;
+        }
+    }
+    &__social-icon {
+        margin-top: 2rem;
+    }
+}

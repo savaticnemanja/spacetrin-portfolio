@@ -1,0 +1,19 @@
+.App {
+    display: flex;
+    justify-content: center;
+    width: 86vw;
+    margin: 0 auto;
+    z-index: 1;
+    &__content {
+        min-height: calc(86vh - 2rem);
+        margin: 90px auto 0 auto;
+        background-color: #151313;
+        display: flex;
+        z-index: 1;
+    }
+    &__socials {
+        background-color: white;
+        display: flex;
+        width: 3rem;
+    }
+}

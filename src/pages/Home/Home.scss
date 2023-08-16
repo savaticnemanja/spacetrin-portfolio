@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    max-height: 800px;
+    max-width: 86vw;
+    &__left {
+        padding: 3rem 5rem;
+        p {
+            max-width: 85%;
+            line-height: 1.5rem;
+            font-size: 18px;
+        }
+    }
+    &__right {
+        background-color: #151313;
+        img {
+            height: 100%;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+}
