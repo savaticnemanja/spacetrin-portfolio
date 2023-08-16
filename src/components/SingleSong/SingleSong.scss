@@ -1,15 +1,17 @@
 .single-song {
     width: 100%;
-    border-left: 5px solid #ffcc33;
+    border-left: 5px solid #ffcc33b3;
     background-color: #222;
     margin-bottom: 3rem;
     min-height: 240px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    transition: 0.2s ease-in-out;
     img {
-        border-radius: 4px;
         width: 100%;
+        opacity: 0.8;
+        transition: 0.2s ease-in-out;
     }
     &__info {
         padding: 1rem 2rem;
@@ -21,12 +23,12 @@
             color: rgba($color: #fff, $alpha: 0.8);
             margin-top: 0.4rem;
             font-size: 18px;
-            opacity: 0.6;
+            opacity: 0.7;
         }
     }
     &__stream-icon {
         transition: 0.2s ease-in-out;
-        margin: 1.6rem 1rem 0 0;
+        margin: 1rem 1rem 0 0;
         &:hover {
             cursor: pointer;
         }
@@ -62,8 +64,12 @@
         }
     }
     &:hover {
+        transition: 0.2s ease-in-out;
+        img {
+            opacity: 1;
+        }
         cursor: pointer;
-        border-left: 5px solid #ffbf00;
+        border-left: 5px solid #ffcc33;
         .single-song__info {
             h1 {
                 color: #ffcc33;

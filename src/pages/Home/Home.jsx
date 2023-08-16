@@ -22,7 +22,7 @@ const Home = () => (
                     <p>
                         Spacetrin&apos;s artistic growth unfurled through dynamic collaborations. Nurtured by an innate knack for sound engineering, he seamlessly transitioned into roles as a mix and
                         master engineer. With a wealth of experience and an unwavering artistic spirit, Spacetrin stepped onto the music scene, this time under his own name. Thus, he embarked on a
-                        musical odyssey that authentically encapsulated his essence.
+                        musical odyssey that authentically encapsulated his essence.
                     </p>
                 </div>
                 <div className="home__latest-release">
@@ -32,14 +32,14 @@ const Home = () => (
                         name="Sleep It Away"
                         artists="Spacetrin ft. Dragana Sukur"
                         spotify="https://open.spotify.com/album/6Kosl22CzH8Yco1mNRPj1V"
-                        youtube=""
+                        youtube="asd"
                         itunes="https://geo.music.apple.com/album/sleep-it-away-feat-dragana-sukur-single/1702683205"
                         soundcloud=""
                     />
                 </div>
                 <div className="home__socials">
                     <h1 className="home__latest-release-heading">Socials</h1>
-                    <Link to="https://www.facebook.com/profile.php?id=61550499476854" target="_blank" rel="noopener noreferrer">
+                    <Link to="https://www.facebook.com/spacetrin" target="_blank" rel="noopener noreferrer">
                         <FaFacebook className="home__social-icon" size="28px" color="#fff" />
                     </Link>
                     <Link to="https://www.instagram.com/spacetrin" target="_blank" rel="noopener noreferrer">

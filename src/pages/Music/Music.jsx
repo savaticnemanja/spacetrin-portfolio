@@ -1,4 +1,4 @@
-import { SleepItAwayCover } from "../../assets";
+import { SleepItAwayCover, RealityCheckCover } from "../../assets";
 import { SingleSong } from "../../components";
 import "./Music.scss";
 
@@ -11,6 +11,16 @@ const songs = [
         spotify: "https://open.spotify.com/album/6Kosl22CzH8Yco1mNRPj1V",
         youtube: "",
         itunes: "https://geo.music.apple.com/album/sleep-it-away-feat-dragana-sukur-single/1702683205",
+        soundcloud: "",
+    },
+    {
+        id: 2,
+        cover: RealityCheckCover,
+        name: "Reality Check (Spacetrin Remix)",
+        artists: "Chance Encounter",
+        spotify: "",
+        youtube: "https://www.youtube.com/watch?v=PNrw3AuVq-c",
+        itunes: "",
         soundcloud: "",
     },
 ];

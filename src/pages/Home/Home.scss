@@ -4,11 +4,12 @@
     width: 100vw;
     &__left {
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 1rem;
         order: 2;
         p {
+            color: #ffffffcc;
             margin-bottom: 1.5rem;
-            text-shadow: 1px 1px 0px #ffcc3355;
+            text-shadow: 1px 1px 0px #000;
             font-size: 18px;
         }
     }
@@ -28,19 +29,20 @@
     }
     &__latest-release {
         .single-song {
-            margin: 0;
+            margin: 0 0 1rem 0;
             width: 100%;
         }
     }
     &__latest-release-heading {
+        text-shadow: 2px 2px 0px #000000b3;
         color: #ffcc33;
         font-size: 3rem;
-        opacity: 0.5;
+        opacity: 0.7;
         margin: 0.5rem 0;
     }
     &__social-icon {
         margin: 0 1rem 0 0;
-        opacity: 0.8;
+        opacity: 0.7;
         transition: 0.2s ease-in-out;
         &:hover {
             opacity: 1;

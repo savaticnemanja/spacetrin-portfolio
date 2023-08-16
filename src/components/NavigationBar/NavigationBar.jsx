@@ -5,7 +5,9 @@ import "./NavigationBar.scss";
 const NavigationBar = () => {
     return (
         <div className="navigation-bar">
-            <Logo className="navigation-bar__logo" fill="#fff" />
+            <Link to="/">
+                <Logo className="navigation-bar__logo" fill="#fff" />
+            </Link>
             <nav className="navigation-bar__links">
                 <ul>
                     <li>
