@@ -5,7 +5,7 @@ import "./NavigationBar.scss";
 const NavigationBar = () => {
     return (
         <div className="navigation-bar">
-            <Logo className="navigation-bar__logo" fill="white" />
+            <Logo className="navigation-bar__logo" fill="#fff" />
             <nav className="navigation-bar__links">
                 <ul>
                     <li>
@@ -15,7 +15,7 @@ const NavigationBar = () => {
                         <Link to="/music">Music</Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="mailto:spacetrinmusic@gmail.com">Contact</Link>
                     </li>
                 </ul>
             </nav>

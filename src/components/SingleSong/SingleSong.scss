@@ -1,0 +1,101 @@
+.single-song {
+    width: 100%;
+    border-left: 5px solid #ffcc33;
+    background-color: #222;
+    margin-bottom: 3rem;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    img {
+        border-radius: 4px;
+        width: 100%;
+    }
+    &__info {
+        padding: 1rem 2rem;
+        h1 {
+            color: rgba($color: #fff, $alpha: 1);
+            font-size: 24px;
+        }
+        h2 {
+            color: rgba($color: #fff, $alpha: 0.8);
+            margin-top: 0.4rem;
+            font-size: 18px;
+            opacity: 0.6;
+        }
+    }
+    &__stream-icon {
+        transition: 0.2s ease-in-out;
+        margin: 1.6rem 1rem 0 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .spotify {
+        fill: #1db954;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .youtube {
+        fill: #ff0000;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .itunes {
+        border-radius: 50%;
+        padding: 0.25rem;
+        background-image: linear-gradient(315deg, rgba(33, 199, 254, 1) 0%, rgba(160, 115, 225, 1) 33%, rgba(254, 92, 104, 1) 66%, rgba(255, 94, 80, 1) 100%);
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .soundcloud {
+        fill: #ff7700;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        border-left: 5px solid #ffbf00;
+        .single-song__info {
+            h1 {
+                color: #ffcc33;
+            }
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .single-song {
+        flex-direction: row;
+        img {
+            width: 240px;
+            height: 100%;
+        }
+        &:last-child {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1264px) {
+    .single-song {
+        width: 49%;
+    }
+}
+
+@media only screen and (min-width: 1652px) {
+    .single-song {
+        width: 49%;
+    }
+}
