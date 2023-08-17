@@ -44,8 +44,8 @@
 
 @media only screen and (min-width: 768px) {
     .navigation-bar {
-        margin: 0 auto;
-        width: 86vw;
+        width: 100%;
+        padding: 0 1rem;
         &__logo {
             display: block;
         }
@@ -62,5 +62,12 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .navigation-bar {
+        width: 86vw;
+        padding: 0;
     }
 }
