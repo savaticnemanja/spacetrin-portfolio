@@ -4,7 +4,7 @@ import "./SingleSong.scss";
 
 const SingleSong = ({ cover, name, artists, spotify, youtube, itunes, soundcloud }) => {
     return (
-        <Link to={spotify} target="_blank" rel="noopener noreferrer" className="single-song">
+        <Link to={spotify || youtube} target="_blank" rel="noopener noreferrer" className="single-song">
             <img src={cover} />
             <div className="single-song__info">
                 <h1>{name}</h1>
