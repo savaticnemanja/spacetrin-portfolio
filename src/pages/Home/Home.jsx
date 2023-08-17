@@ -34,7 +34,7 @@ const Home = () => (
                         spotify="https://open.spotify.com/album/6Kosl22CzH8Yco1mNRPj1V"
                         youtube="asd"
                         itunes="https://geo.music.apple.com/album/sleep-it-away-feat-dragana-sukur-single/1702683205"
-                        soundcloud=""
+                        soundcloud="https://soundcloud.com/spacetrin/sleep-it-away"
                     />
                 </div>
                 <div className="home__socials">
