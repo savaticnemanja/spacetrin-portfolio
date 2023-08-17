@@ -9,8 +9,8 @@ const songs = [
         name: "Sleep It Away",
         artists: "Spacetrin ft. Dragana Sukur",
         spotify: "https://open.spotify.com/album/6Kosl22CzH8Yco1mNRPj1V",
-        youtube: "",
-        itunes: "https://geo.music.apple.com/album/sleep-it-away-feat-dragana-sukur-single/1702683205",
+        youtube: "https://www.youtube.com/watch?v=CPEzFIPp8Zg",
+        itunes: "https://music.apple.com/rs/album/sleep-it-away-feat-dragana-sukur-single/1702683205",
         soundcloud: "",
     },
     {

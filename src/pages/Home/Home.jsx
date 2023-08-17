@@ -45,7 +45,7 @@ const Home = () => (
                     <Link to="https://www.instagram.com/spacetrin" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="home__social-icon" size="28px" color="#fff" />
                     </Link>
-                    <Link to="https://twitter.com/JebeniSpace3n" target="_blank" rel="noopener noreferrer">
+                    <Link to="https://twitter.com/spacetrin_music" target="_blank" rel="noopener noreferrer">
                         <FaTwitter className="home__social-icon" size="28px" color="#fff" />
                     </Link>
                     <Link to="https://open.spotify.com/artist/4BIqRnsn7jai121p8bCSpq" target="_blank" rel="noopener noreferrer">
