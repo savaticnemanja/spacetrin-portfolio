@@ -59,9 +59,7 @@ const Home = () => (
                     </Link>
                 </div>
             </div>
-            <div className="home__right">
-                <img src={HomeBanner} />
-            </div>
+            <img className="home__right" src={HomeBanner} />
         </div>
     </>
 );

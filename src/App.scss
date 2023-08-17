@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 86vw;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto;
 
     z-index: 1;
     &__content {
@@ -11,5 +11,19 @@
         background-color: #151313;
         display: flex;
         z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .App {
+        margin: 0 auto 2rem auto;
+    }
+}
+
+@media only screen and (min-height: 1046px) and (min-width: 1920px) {
+    .App {
+        &__content {
+            max-height: 86vh;
+        }
     }
 }

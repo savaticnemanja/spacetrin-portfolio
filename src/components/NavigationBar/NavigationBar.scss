@@ -14,22 +14,20 @@
     }
     &__links {
         margin: 0 auto;
-        width: 86vw;
+        width: 100%;
         ul {
+            float: right;
             list-style-type: none;
-            padding: 0;
             display: flex;
             li {
-                width: 100%;
-                padding: 0;
                 a {
+                    padding: 0.5rem 1rem;
                     font-weight: 900;
                     font-size: 1.25rem;
                     color: #fff;
                     text-decoration: none;
                     border-left: 5px solid #ffcc33b3;
                     transition: 0.2s ease-in-out;
-                    padding: 0.2rem 1rem;
                     &:hover {
                         border-left: 5px solid #ffcc33;
                     }
@@ -50,14 +48,13 @@
             display: block;
         }
         &__links {
+            width: 86vw;
             margin: 0;
-            width: auto;
             ul {
+                justify-content: flex-end;
                 li {
-                    width: auto;
-                    padding: 1rem 2rem;
-                    &:last-child {
-                        padding: 1rem 0 1rem 2rem;
+                    a {
+                        padding: 0.5rem 2rem;
                     }
                 }
             }
