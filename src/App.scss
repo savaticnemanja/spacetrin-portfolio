@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     width: 86vw;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
+
     z-index: 1;
     &__content {
         min-height: calc(86vh - 2rem);
