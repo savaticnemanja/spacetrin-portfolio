@@ -9,7 +9,7 @@ const Home = () => (
         <div className="home">
             <div className="home__left">
                 <div>
-                    <h1 className="home__latest-release-heading">About me</h1>
+                    <h1 className="home__latest-release-heading">About</h1>
                     <p>
                         Hailing from Serbia, Spacetrin embarked on his musical journey in 2016, venturing into the realm of music production. Initially drawn to Dubstep and Drum & Bass, his creative
                         instincts evolved, guiding him towards the captivating beats of Hip Hop, where he found his true musical resonance.
