@@ -1,10 +1,20 @@
-import { SleepItAwayCover, RealityCheckCover } from "../../assets";
+import { UtopiaCover, SleepItAwayCover, RealityCheckCover } from "../../assets";
 import { SingleSong } from "../../components";
 import "./Music.scss";
 
 const songs = [
     {
         id: 1,
+        cover: UtopiaCover,
+        name: "Utopia",
+        artists: "Spacetrin",
+        spotify: "https://open.spotify.com/album/7jl0EelM4RxN4CMAFjmBaF",
+        youtube: "https://www.youtube.com/watch?v=4wtOGcdL9eg",
+        itunes: "https://music.apple.com/rs/album/utopia-single/1709886115",
+        soundcloud: "https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    },
+    {
+        id: 2,
         cover: SleepItAwayCover,
         name: "Sleep It Away",
         artists: "Spacetrin ft. Dragana Sukur",
@@ -14,7 +24,7 @@ const songs = [
         soundcloud: "https://soundcloud.com/spacetrin/sleep-it-away",
     },
     {
-        id: 2,
+        id: 3,
         cover: RealityCheckCover,
         name: "Reality Check (Spacetrin Remix)",
         artists: "Chance Encounter",

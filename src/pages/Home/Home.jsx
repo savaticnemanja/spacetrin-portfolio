@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaSoundcloud, FaSpotify, FaTwitter, FaYoutube } from "react-icons/fa";
-import { HomeBanner, SleepItAwayCover } from "../../assets";
+import { HomeBanner, UtopiaCover } from "../../assets";
 import { SingleSong } from "../../components";
 import "./Home.scss";
 
@@ -28,13 +28,13 @@ const Home = () => (
                 <div className="home__latest-release">
                     <h1 className="home__latest-release-heading">Latest Release</h1>
                     <SingleSong
-                        cover={SleepItAwayCover}
-                        name="Sleep It Away"
-                        artists="Spacetrin ft. Dragana Sukur"
-                        spotify="https://open.spotify.com/album/6Kosl22CzH8Yco1mNRPj1V"
-                        youtube="https://www.youtube.com/watch?v=CPEzFIPp8Zg"
-                        itunes="https://geo.music.apple.com/album/sleep-it-away-feat-dragana-sukur-single/1702683205"
-                        soundcloud="https://soundcloud.com/spacetrin/sleep-it-away"
+                        cover={UtopiaCover}
+                        name="Utopia"
+                        artists="Spacetrin"
+                        spotify="https://open.spotify.com/album/7jl0EelM4RxN4CMAFjmBaF"
+                        youtube="https://www.youtube.com/watch?v=4wtOGcdL9eg"
+                        itunes="https://music.apple.com/rs/album/utopia-single/1709886115"
+                        soundcloud="https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
                     />
                 </div>
                 <div className="home__socials">
