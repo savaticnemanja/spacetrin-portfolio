@@ -1,6 +1,6 @@
 import { VenusCover, UtopiaCover, SleepItAwayCover, RealityCheckCover } from "../assets";
 
-export default const tracks = [
+export const tracks = [
   {
     id: 1,
     cover: VenusCover,
