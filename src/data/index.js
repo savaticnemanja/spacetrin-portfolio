@@ -1,1 +1,1 @@
-export { tracks } from './tracks';
+export { featuredTrack, tracks } from "./tracks";
