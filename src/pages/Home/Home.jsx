@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { HomeBanner, VenusCover } from "../../assets";
 import { SingleSong } from "../../components";
+import { tracks } from '../../data";
 import "./Home.scss";
 
 const Home = () => (
@@ -45,13 +46,13 @@ const Home = () => (
         <div className="home__latest-release">
           <h1 className="home__latest-release-heading">Latest Release</h1>
           <SingleSong
-            cover={VenusCover}
-            name="Utopia"
-            artists="Spacetrin"
-            spotify="https://open.spotify.com/album/2A6prNRqa5D9sxM7m4Tx33"
-            youtube="https://www.youtube.com/watch?v=bgqh6lTRrK8"
-            appleMusic="https://geo.music.apple.com/album/venus-single/1730955577"
-            soundcloud="https://soundcloud.com/spacetrin/venus-1?si=9d79f4916f55471f890f431401a9b01d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+            cover={tracks[0].cover}
+            name={tracks[0].name}
+            artists={tracks[0].artists}
+            spotify={tracks[0].sportify}
+            youtube={tracks[0].youtube}
+            appleMusic={tracks[0].appleMusic}
+            soundcloud={tracks[0].soundloud}
           />
         </div>
         <div className="home__socials">
