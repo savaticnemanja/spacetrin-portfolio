@@ -49,10 +49,10 @@ const Home = () => (
             cover={tracks[0].cover}
             name={tracks[0].name}
             artists={tracks[0].artists}
-            spotify={tracks[0].sportify}
+            spotify={tracks[0].spotify}
             youtube={tracks[0].youtube}
             appleMusic={tracks[0].appleMusic}
-            soundcloud={tracks[0].soundloud}
+            soundcloud={tracks[0].soundcloud}
           />
         </div>
         <div className="home__socials">
