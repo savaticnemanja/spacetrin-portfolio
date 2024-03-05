@@ -1,0 +1,54 @@
+name: Auto Publish Master to Server
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  checkout-code:
+    name: Establish connection
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Initialize actions/checkout
+        uses: actions/checkout@v4
+
+  setup-dependencies:
+    name: Setup Dependencies
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: ["20"]
+
+    steps:
+      - name: Set up Node.js using the specified version
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+  fetch-and-deploy:
+    name: Fetch and deploy
+    needs: [checkout-code, setup-dependencies]
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: ["20"]
+
+    steps:
+      - name: Initialize appleboy/ssh-action
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            source ~/.nvm/nvm.sh
+            nvm use ${{ matrix.node-version }}
+            cd /var/www/spacetrin-portfolio
+            git fetch --all
+            git reset --hard origin/master
+            rm -rf dist node_modules package-lock.json
+            npm install
+            npm run build
