@@ -22,8 +22,9 @@ const SingleSong = ({
       target="_blank"
       rel="noopener noreferrer"
       className="single-song"
+      aria-label="Song link"
     >
-      <img src={cover} />
+      <img src={cover} alt={name} />
       <div className="single-song__info">
         <h1>{name}</h1>
         <h2>{artists}</h2>
