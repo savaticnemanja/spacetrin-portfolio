@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { HomeBanner, VenusCover } from "../../assets";
 import { SingleSong } from "../../components";
-import { tracks } from '../../data";
+import { tracks } from "../../data";
 import "./Home.scss";
 
 const Home = () => (
