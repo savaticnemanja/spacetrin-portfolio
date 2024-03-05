@@ -1,1 +1,1 @@
-export { default as tracks } from "./tracks";
+export tracks from "./tracks";
