@@ -7,7 +7,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { HomeBanner, UtopiaCover } from "../../assets";
+import { HomeBanner, VenusCover } from "../../assets";
 import { SingleSong } from "../../components";
 import "./Home.scss";
 
@@ -45,13 +45,13 @@ const Home = () => (
         <div className="home__latest-release">
           <h1 className="home__latest-release-heading">Latest Release</h1>
           <SingleSong
-            cover={UtopiaCover}
+            cover={VenusCover}
             name="Utopia"
             artists="Spacetrin"
-            spotify="https://open.spotify.com/album/7jl0EelM4RxN4CMAFjmBaF"
-            youtube="https://www.youtube.com/watch?v=4wtOGcdL9eg"
-            appleMusic="https://music.apple.com/rs/album/utopia-single/1709886115"
-            soundcloud="https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+            spotify="https://open.spotify.com/album/2A6prNRqa5D9sxM7m4Tx33"
+            youtube="https://www.youtube.com/watch?v=bgqh6lTRrK8"
+            appleMusic="https://geo.music.apple.com/album/venus-single/1730955577"
+            soundcloud="https://soundcloud.com/spacetrin/venus-1?si=9d79f4916f55471f890f431401a9b01d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
           />
         </div>
         <div className="home__socials">
