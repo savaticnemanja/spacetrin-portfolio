@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { HomeBanner, VenusCover } from "../../assets";
 import { SingleSong } from "../../components";
-import { tracks } from "../../data";
+import { featuredTrack } from "../../data";
 import "./Home.scss";
 
 const Home = () => (
@@ -46,13 +46,13 @@ const Home = () => (
         <div className="home__latest-release">
           <h1 className="home__latest-release-heading">Latest Release</h1>
           <SingleSong
-            cover={tracks[0].cover}
-            name={tracks[0].name}
-            artists={tracks[0].artists}
-            spotify={tracks[0].spotify}
-            youtube={tracks[0].youtube}
-            appleMusic={tracks[0].appleMusic}
-            soundcloud={tracks[0].soundcloud}
+            cover={featuredTrack.cover}
+            name={featuredTrack.name}
+            artists={featuredTrack.artists}
+            spotify={featuredTrack.spotify}
+            youtube={featuredTrack.youtube}
+            appleMusic={featuredTrack.appleMusic}
+            soundcloud={featuredTrack.soundcloud}
           />
         </div>
         <div className="home__socials">
