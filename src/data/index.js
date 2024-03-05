@@ -1,1 +1,1 @@
-export tracks from "./tracks";
+export { tracks } from './tracks';
