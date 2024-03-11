@@ -39,7 +39,7 @@ export const tracks = [
     appleMusic:
       "https://music.apple.com/us/album/thaddeus-mobly-single/1718787093",
     soundcloud:
-      "https://soundcloud.com/spacetrin/venus-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "https://soundcloud.com/spacetrin/thaddeus-mobly?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
     id: 3,
