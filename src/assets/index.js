@@ -5,3 +5,4 @@ export { default as UtopiaCover } from "./utopia-cover.webp";
 export { default as SleepItAwayCover } from "./sleep-it-away-cover.webp";
 export { default as RealityCheckCover } from "./reality-check.cover.webp";
 export { default as ThaddeusMobbly } from "./thaddeus-mobbly-cover.webp";
+export { default as TheLastCommoner } from "./the-last-commoner.webp";
