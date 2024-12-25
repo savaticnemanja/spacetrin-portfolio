@@ -18,8 +18,6 @@ export const tracks = [
     youtube: "https://youtube.com/playlist?list=PLo29IVat_gN4DEY2IelLwsfnlE2a8SNBl&si=Q9Mn-wV0Qbbqd6TD",
     appleMusic:
       "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
-    soundcloud:
-      "https://soundcloud.com/spacetrin/sets/second-nature-ep",
   },
   {
     id: 2,
