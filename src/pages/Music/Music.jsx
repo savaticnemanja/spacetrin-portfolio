@@ -1,9 +1,3 @@
-import {
-  VenusCover,
-  UtopiaCover,
-  SleepItAwayCover,
-  RealityCheckCover,
-} from "../../assets";
 import { SingleSong } from "../../components";
 import { tracks } from "../../data";
 import "./Music.scss";

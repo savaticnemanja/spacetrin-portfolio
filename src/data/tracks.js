@@ -4,11 +4,25 @@ import {
   SleepItAwayCover,
   ThaddeusMobbly,
   TheLastCommoner,
+  SecondNature
 } from "../assets";
 
 export const tracks = [
   {
     id: 1,
+    cover: SecondNature,
+    name: "Second Nature EP",
+    artists: "Spacetrin",
+    spotify:
+      "https://open.spotify.com/album/3yhznWtYzJeA4XZMpH2lCt?si=Rts3NTo1Qmi7OQ01gbSvuQ",
+    youtube: "https://youtube.com/playlist?list=PLo29IVat_gN4DEY2IelLwsfnlE2a8SNBl&si=Q9Mn-wV0Qbbqd6TD",
+    appleMusic:
+      "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
+    soundcloud:
+      "https://soundcloud.com/spacetrin/sets/second-nature-ep",
+  },
+  {
+    id: 2,
     cover: TheLastCommoner,
     name: "The Last Commoner",
     artists: "Spacetrin",
@@ -21,7 +35,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/the-last-commoner?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 2,
+    id: 3,
     cover: VenusCover,
     name: "Venus",
     artists: "Spacetrin",
@@ -32,7 +46,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/venus-1?si=9d79f4916f55471f890f431401a9b01d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 3,
+    id: 4,
     cover: ThaddeusMobbly,
     name: "Thaddeus Mobbly",
     artists: "Spacetrin",
@@ -44,7 +58,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/thaddeus-mobly?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 4,
+    id: 5,
     cover: UtopiaCover,
     name: "Utopia",
     artists: "Spacetrin",
@@ -55,7 +69,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 5,
+    id: 6,
     cover: SleepItAwayCover,
     name: "Sleep It Away",
     artists: "Spacetrin ft. Dragana Sukur",

@@ -7,7 +7,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { HomeBanner, VenusCover } from "../../assets";
+import { HomeBanner } from "../../assets";
 import { SingleSong } from "../../components";
 import { featuredTrack } from "../../data";
 import "./Home.scss";
