@@ -6,15 +6,15 @@ on:
 
 jobs:
   checkout-code:
-    name: Establish connection
+    name: Checkout Code
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Initialize actions/checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
   setup-dependencies:
-    name: Setup Dependencies
+    name: Setup Node.js and Build Project
     runs-on: ubuntu-22.04
 
     strategy:
@@ -22,33 +22,45 @@ jobs:
         node-version: ["20"]
 
     steps:
-      - name: Set up Node.js using the specified version
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist
+
   fetch-and-deploy:
-    name: Fetch and deploy
+    name: Deploy to Server
     needs: [checkout-code, setup-dependencies]
     runs-on: ubuntu-22.04
 
-    strategy:
-      matrix:
-        node-version: ["20"]
-
     steps:
-      - name: Initialize appleboy/ssh-action
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.7.0
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          script: |
-            source ~/.nvm/nvm.sh
-            nvm use ${{ matrix.node-version }}
-            cd /var/www/spacetrin-portfolio
-            git fetch --all
-            git reset --hard origin/master
-            rm -rf dist node_modules package-lock.json
-            npm install
-            npm run build
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: ./dist
+
+      - name: Deploy to server
+        run: |
+          scp -o StrictHostKeyChecking=no -r ./dist ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
+          ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+          cd /var/www/spacetrin.com
+          rm -rf node_modules package-lock.json
+          npm install
+          EOF
