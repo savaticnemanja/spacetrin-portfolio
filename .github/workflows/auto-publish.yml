@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: ./build
+          path: ./dist
 
   deploy:
     name: Deploy to Server
@@ -57,7 +57,7 @@ jobs:
       # Deploy the build to the server
       - name: Deploy Build to Server
         run: |
-          scp -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
+          scp -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
           ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           cd /var/www/spacetrin.com
           chmod -R 755 .
