@@ -10,31 +10,26 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "npm"
 
-      # Install dependencies
       - name: Install Dependencies
         run: npm ci
 
-      # Build the React app
       - name: Build Project
         run: npm run build
 
-      # Upload build artifacts
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: ./dist
+          path: ./build
 
   deploy:
     name: Deploy to Server
@@ -42,23 +37,24 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      # Download the build artifacts
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
           name: build-artifact
 
-      # Set up SSH agent
       - name: Add SSH Key
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # Deploy the build to the server
+      - name: Add Server to Known Hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy Build to Server
         run: |
-          scp -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+          scp -o StrictHostKeyChecking=no -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
+          ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           cd /var/www/spacetrin.com
           chmod -R 755 .
           EOF
