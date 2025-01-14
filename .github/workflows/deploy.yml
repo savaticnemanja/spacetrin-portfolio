@@ -34,4 +34,4 @@ jobs:
       # Step 5: Copy the build files to the server
       - name: Deploy build to production server
         run: |
-          rsync -avz --delete ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
+          rsync -avz --delete ./dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
