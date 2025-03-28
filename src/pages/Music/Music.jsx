@@ -19,6 +19,7 @@ const Music = () => {
             soundcloud={el.soundcloud}
           />
         ))}
+        <p className="dev__signature">Copyright &#169; Spacetrin. Developed by <a href="https://nemanjas.dev">nemanjas.dev</a></p>
       </div>
     </div>
   );

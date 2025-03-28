@@ -18,14 +18,14 @@ const Home = () => (
       <div className="home__left">
         <div>
           <h1 className="home__latest-release-heading">About</h1>
-          <p>
+          <p className="paragraph">
             Hailing from Serbia, Spacetrin embarked on his musical journey in
             2016, venturing into the realm of music production. Initially drawn
             to Dubstep and Drum & Bass, his creative instincts evolved, guiding
             him towards the captivating beats of Hip Hop, where he found his
             true musical resonance.
           </p>
-          <p>
+          <p className="paragraph">
             Driven by a desire to refine his skills and deepen his passion, he
             enrolled in the Music Production module at the University of Novi
             Sad. Here, he immersed himself in a comprehensive curriculum,
@@ -33,7 +33,7 @@ const Home = () => (
             perspectives. This educational pursuit marked a pivotal and
             transformative chapter in his story.
           </p>
-          <p>
+          <p className="paragraph">
             Spacetrin&apos;s artistic growth unfurled through dynamic
             collaborations. Nurtured by an innate knack for sound engineering,
             he seamlessly transitioned into roles as a mix and master engineer.
@@ -112,6 +112,7 @@ const Home = () => (
             />
           </Link>
         </div>
+        <p className="dev__signature">Copyright &#169; Spacetrin. Developed by <a href="https://nemanjas.dev">nemanjas.dev</a></p>
       </div>
       <img className="home__right" src={HomeBanner} />
     </div>
