@@ -5,11 +5,21 @@ import {
   ThaddeusMobbly,
   TheLastCommoner,
   SecondNature,
+  HigherGround,
 } from "../assets";
 
 export const tracks = [
   {
     id: 1,
+    cover: HigherGround,
+    name: "Higher Ground",
+    artists: "Spacetrin",
+    spotify:
+      "https://open.spotify.com/album/3AcQBoTIhj3nSvKf4To6eN?referral=labelaffiliate&utm_source=1100lBSALvtj&utm_medium=Merlin_Kasetadigital&utm_campaign=labelaffiliate",
+    youtube: "https://www.youtube.com/watch?v=FtEpGySRtYw&list=RDFtEpGySRtYw&start_radio=1",
+  },
+  {
+    id: 2,
     cover: SecondNature,
     name: "Second Nature EP",
     artists: "Spacetrin",
@@ -19,7 +29,7 @@ export const tracks = [
     appleMusic: "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
   },
   {
-    id: 2,
+    id: 3,
     cover: TheLastCommoner,
     name: "The Last Commoner",
     artists: "Spacetrin",
@@ -30,7 +40,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/the-last-commoner?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 3,
+    id: 4,
     cover: VenusCover,
     name: "Venus",
     artists: "Spacetrin",
@@ -41,7 +51,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/venus-1?si=9d79f4916f55471f890f431401a9b01d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 4,
+    id: 5,
     cover: ThaddeusMobbly,
     name: "Thaddeus Mobbly",
     artists: "Spacetrin",
@@ -52,7 +62,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/thaddeus-mobly?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 5,
+    id: 6,
     cover: UtopiaCover,
     name: "Utopia",
     artists: "Spacetrin",
@@ -63,7 +73,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 6,
+    id: 7,
     cover: SleepItAwayCover,
     name: "Sleep It Away",
     artists: "Spacetrin ft. Dragana Sukur",
