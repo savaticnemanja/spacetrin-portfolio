@@ -1,70 +1,70 @@
 .navigation-bar {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 90px;
-    padding: 0 0 0 0;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    background-color: #000;
-    &__logo {
-        display: none;
-        width: 280px;
-    }
-    &__links {
-        margin: 0 auto;
-        width: 100%;
-        ul {
-            float: right;
-            list-style-type: none;
-            display: flex;
-            li {
-                a {
-                    padding: 0.5rem 1rem;
-                    font-weight: 900;
-                    font-size: 1.25rem;
-                    color: #fff;
-                    text-decoration: none;
-                    border-left: 5px solid #ffcc33b3;
-                    transition: 0.2s ease-in-out;
-                    &:hover {
-                        border-left: 5px solid #ffcc33;
-                    }
-                }
-                &:last-child {
-                    padding: 0;
-                }
-            }
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 90px;
+  padding: 0 0 0 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background-color: #000;
+  &__logo {
+    display: none;
+    width: 280px;
+  }
+  &__links {
+    margin: 0 auto;
+    width: 100%;
+    ul {
+      float: right;
+      list-style-type: none;
+      display: flex;
+      li {
+        a {
+          padding: 0.5rem 1rem;
+          font-weight: 900;
+          font-size: 1.25rem;
+          color: #fff;
+          text-decoration: none;
+          border-left: 5px solid #ffcc33b3;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            border-left: 5px solid #ffcc33;
+          }
         }
+        &:last-child {
+          padding: 0;
+        }
+      }
     }
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .navigation-bar {
-        width: 100%;
-        padding: 0 1rem;
-        &__logo {
-            display: block;
-        }
-        &__links {
-            width: 86vw;
-            margin: 0;
-            ul {
-                justify-content: flex-end;
-                li {
-                    a {
-                        padding: 0.5rem 2rem;
-                    }
-                }
-            }
-        }
+  .navigation-bar {
+    width: 100%;
+    padding: 0 1rem;
+    &__logo {
+      display: block;
     }
+    &__links {
+      width: 86vw;
+      margin: 0;
+      ul {
+        justify-content: flex-end;
+        li {
+          a {
+            padding: 0.5rem 2rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-    .navigation-bar {
-        width: 86vw;
-        padding: 0;
-    }
+  .navigation-bar {
+    width: 86vw;
+    padding: 0;
+  }
 }

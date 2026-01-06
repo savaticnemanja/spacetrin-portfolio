@@ -1,26 +1,26 @@
 .music {
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  width: 100vw;
+  min-height: 86vh;
+  &__songs-container {
     display: flex;
-    flex-direction: column;
-    padding: 1.5rem 1rem;
-    width: 100vw;
-    min-height: 86vh;
-    &__songs-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    &__latest-release-heading {
-        color: #ffcc33;
-        font-size: 3rem;
-        opacity: 0.7;
-        margin-bottom: 0.5rem;
-    }
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__latest-release-heading {
+    color: #ffcc33;
+    font-size: 3rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-    .music {
-        padding: 3rem 5rem 0 5rem;
-        width: 86vw;
-    }
+  .music {
+    padding: 3rem 5rem 0 5rem;
+    width: 86vw;
+  }
 }

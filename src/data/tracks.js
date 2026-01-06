@@ -4,7 +4,7 @@ import {
   SleepItAwayCover,
   ThaddeusMobbly,
   TheLastCommoner,
-  SecondNature
+  SecondNature,
 } from "../assets";
 
 export const tracks = [
@@ -13,22 +13,19 @@ export const tracks = [
     cover: SecondNature,
     name: "Second Nature EP",
     artists: "Spacetrin",
-    spotify:
-      "https://open.spotify.com/album/3yhznWtYzJeA4XZMpH2lCt?si=Rts3NTo1Qmi7OQ01gbSvuQ",
-    youtube: "https://youtube.com/playlist?list=PLo29IVat_gN4DEY2IelLwsfnlE2a8SNBl&si=Q9Mn-wV0Qbbqd6TD",
-    appleMusic:
-      "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
+    spotify: "https://open.spotify.com/album/3yhznWtYzJeA4XZMpH2lCt?si=Rts3NTo1Qmi7OQ01gbSvuQ",
+    youtube:
+      "https://youtube.com/playlist?list=PLo29IVat_gN4DEY2IelLwsfnlE2a8SNBl&si=Q9Mn-wV0Qbbqd6TD",
+    appleMusic: "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
   },
   {
     id: 2,
     cover: TheLastCommoner,
     name: "The Last Commoner",
     artists: "Spacetrin",
-    spotify:
-      "https://open.spotify.com/album/6399bX7YonOFDCVpRSz6gi?si=KNNLmAETRR6_8N5o51Mvcw",
+    spotify: "https://open.spotify.com/album/6399bX7YonOFDCVpRSz6gi?si=KNNLmAETRR6_8N5o51Mvcw",
     youtube: "https://youtu.be/vDObGt1OE1o?si=vHjjh1UFRb9v4wTp",
-    appleMusic:
-      "https://music.apple.com/gb/album/the-last-commoner-single/1752951930",
+    appleMusic: "https://music.apple.com/gb/album/the-last-commoner-single/1752951930",
     soundcloud:
       "https://soundcloud.com/spacetrin/the-last-commoner?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
@@ -50,8 +47,7 @@ export const tracks = [
     artists: "Spacetrin",
     spotify: "https://open.spotify.com/track/7pj4YI4x03qbaEwEHn8hFt",
     youtube: "https://www.youtube.com/watch?v=r4ADmuthbFI",
-    appleMusic:
-      "https://music.apple.com/us/album/thaddeus-mobly-single/1718787093",
+    appleMusic: "https://music.apple.com/us/album/thaddeus-mobly-single/1718787093",
     soundcloud:
       "https://soundcloud.com/spacetrin/thaddeus-mobly?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
