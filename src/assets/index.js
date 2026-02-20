@@ -8,3 +8,4 @@ export { default as ThaddeusMobbly } from "./thaddeus-mobbly-cover.webp";
 export { default as TheLastCommoner } from "./the-last-commoner.webp";
 export { default as SecondNature } from "./second-nature.webp";
 export { default as HigherGround } from "./higher-ground.webp";
+export { default as ThroughSkin } from "./through-skin.webp";

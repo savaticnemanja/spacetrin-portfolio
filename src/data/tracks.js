@@ -6,11 +6,20 @@ import {
   TheLastCommoner,
   SecondNature,
   HigherGround,
+  ThroughSkin,
 } from "../assets";
 
 export const tracks = [
   {
     id: 1,
+    cover: ThroughSkin,
+    name: "Through Skin",
+    artists: "Spacetrin",
+    spotify: "https://open.spotify.com/track/4Fep6YAKcOUVjqhV0ScMuR?si=d73741e51e3241e1",
+    youtube: "https://www.youtube.com/watch?v=JNBJ27q8A4o&list=RDJNBJ27q8A4o&start_radio=1",
+  },
+  {
+    id: 2,
     cover: HigherGround,
     name: "Higher Ground",
     artists: "Spacetrin",
@@ -19,7 +28,7 @@ export const tracks = [
     youtube: "https://www.youtube.com/watch?v=FtEpGySRtYw&list=RDFtEpGySRtYw&start_radio=1",
   },
   {
-    id: 2,
+    id: 3,
     cover: SecondNature,
     name: "Second Nature EP",
     artists: "Spacetrin",
@@ -29,7 +38,7 @@ export const tracks = [
     appleMusic: "https://music.apple.com/us/album/second-nature-ep-single/1784762271",
   },
   {
-    id: 3,
+    id: 4,
     cover: TheLastCommoner,
     name: "The Last Commoner",
     artists: "Spacetrin",
@@ -40,7 +49,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/the-last-commoner?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 4,
+    id: 5,
     cover: VenusCover,
     name: "Venus",
     artists: "Spacetrin",
@@ -51,7 +60,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/venus-1?si=9d79f4916f55471f890f431401a9b01d&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 5,
+    id: 6,
     cover: ThaddeusMobbly,
     name: "Thaddeus Mobbly",
     artists: "Spacetrin",
@@ -62,7 +71,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/thaddeus-mobly?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 6,
+    id: 7,
     cover: UtopiaCover,
     name: "Utopia",
     artists: "Spacetrin",
@@ -73,7 +82,7 @@ export const tracks = [
       "https://soundcloud.com/spacetrin/utopia?si=0c17a506c7a3432fba5590bcc7933942&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
   },
   {
-    id: 7,
+    id: 8,
     cover: SleepItAwayCover,
     name: "Sleep It Away",
     artists: "Spacetrin ft. Dragana Sukur",
