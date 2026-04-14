@@ -35,4 +35,3 @@ jobs:
       - name: Deploy build to production server
         run: |
           scp -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
-          
