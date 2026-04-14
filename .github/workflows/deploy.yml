@@ -60,4 +60,3 @@ jobs:
             cd /var/www/spacetrin.com/releases &&
             ls -1dt */ | tail -n +6 | xargs -r rm -rf
           "
-          
