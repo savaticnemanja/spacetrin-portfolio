@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy React App (Zero Downtime)
 
 on:
   push:
@@ -9,29 +9,54 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      # Step 3: Install dependencies and build the app
-      - name: Install dependencies and build
+      - name: Install & Build
         run: |
           npm install
           npm run build
 
-      # Step 4: Set up SSH key and deploy to the server
-      - name: Set up SSH key
+      - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # Step 5: Copy the build files to the server
-      - name: Deploy build to production server
+      - name: Add host to known_hosts
         run: |
-          scp -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
+      - name: Define release name
+        id: vars
+        run: echo "release=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_OUTPUT
+
+      - name: Create release folder on server
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+            mkdir -p /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}
+          "
+
+      - name: Upload build to release folder
+        run: |
+          rsync -avz --delete \
+            ./dist/ \
+            ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
+
+      - name: Switch current symlink (zero downtime)
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+            ln -sfn /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} /var/www/spacetrin.com/current
+          "
+
+      - name: Cleanup old releases (keep last 5)
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+            cd /var/www/spacetrin.com/releases &&
+            ls -1dt */ | tail -n +6 | xargs -r rm -rf
+          "
