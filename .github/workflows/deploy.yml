@@ -1,55 +1,55 @@
 name: Deploy React App (Zero Downtime)
 
 on:
-push:
-branches:
-- master
+  push:
+    branches:
+      - master
 
 jobs:
-deploy:
-runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: "20"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-  - name: Install dependencies
-    run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-  - name: Build app
-    run: npm run build
+      - name: Build app
+        run: npm run build
 
-  - name: Setup SSH
-    uses: webfactory/ssh-agent@v0.9.0
-    with:
-      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-  - name: Add host to known_hosts
-    run: |
-      mkdir -p ~/.ssh
-      ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+      - name: Add host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
-  - name: Define release name
-    id: vars
-    run: echo "release=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_OUTPUT
+      - name: Define release name
+        id: vars
+        run: echo "release=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_OUTPUT
 
-  - name: Create release folder
-    run: |
-      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "mkdir -p /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}"
+      - name: Create release folder
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "mkdir -p /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}"
 
-  - name: Upload build
-    run: |
-      rsync -az ./dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
+      - name: Upload build
+        run: |
+          rsync -az ./dist/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
 
-  - name: Switch symlink
-    run: |
-      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /var/www/spacetrin.com/current && ln -s /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} /var/www/spacetrin.com/current"
+      - name: Switch symlink
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf /var/www/spacetrin.com/current && ln -s /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} /var/www/spacetrin.com/current"
 
-  - name: Cleanup old releases
-    run: |
-      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /var/www/spacetrin.com/releases && ls -1dt */ | tail -n +6 | xargs -r rm -rf"
+      - name: Cleanup old releases
+        run: |
+          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /var/www/spacetrin.com/releases && ls -1dt */ | tail -n +6 | xargs -r rm -rf"
