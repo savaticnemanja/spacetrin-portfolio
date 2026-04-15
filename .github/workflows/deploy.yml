@@ -2,7 +2,8 @@ name: Deploy React App (Zero Downtime)
 
 on:
 push:
-branches: [master]
+branches:
+- master
 
 jobs:
 deploy:
@@ -51,7 +52,7 @@ steps:
         ./dist/ \
         ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
 
-  - name: Fix permissions (optional but recommended)
+  - name: Fix permissions
     run: |
       ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
         chown -R nemanjas:developers /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} &&
