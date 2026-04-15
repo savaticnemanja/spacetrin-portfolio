@@ -1,62 +1,74 @@
 name: Deploy React App (Zero Downtime)
 
 on:
-  push:
-    branches: [master]
+push:
+branches: [master]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+deploy:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+```
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: "20"
+      cache: "npm"
 
-      - name: Install & Build
-        run: |
-          npm install
-          npm run build
+  - name: Install dependencies
+    run: npm ci
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+  - name: Build app
+    run: npm run build
 
-      - name: Add host to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+  - name: Setup SSH
+    uses: webfactory/ssh-agent@v0.9.0
+    with:
+      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Define release name
-        id: vars
-        run: echo "release=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_OUTPUT
+  - name: Add host to known_hosts
+    run: |
+      mkdir -p ~/.ssh
+      ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
-      - name: Create release folder on server
-        run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
-            mkdir -p /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}
-          "
+  - name: Define release name
+    id: vars
+    run: echo "release=$(date +%Y%m%d_%H%M%S)" >> $GITHUB_OUTPUT
 
-      - name: Upload build to release folder
-        run: |
-          rsync -avz --delete \
-            ./dist/ \
-            ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
+  - name: Create release folder on server
+    run: |
+      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+        mkdir -p /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}
+      "
 
-      - name: Switch current symlink (zero downtime)
-        run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
-            ln -sfn /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} /var/www/spacetrin.com/current
-          "
+  - name: Upload build to release folder
+    run: |
+      rsync -az --delete \
+        ./dist/ \
+        ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}/
 
-      - name: Cleanup old releases (keep last 5)
-        run: |
-          ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
-            cd /var/www/spacetrin.com/releases &&
-            ls -1dt */ | tail -n +6 | xargs -r rm -rf
-          "
+  - name: Fix permissions (optional but recommended)
+    run: |
+      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+        chown -R nemanjas:developers /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} &&
+        chmod -R 755 /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }}
+      "
+
+  - name: Switch current symlink (zero downtime)
+    run: |
+      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+        rm -rf /var/www/spacetrin.com/current &&
+        ln -s /var/www/spacetrin.com/releases/${{ steps.vars.outputs.release }} /var/www/spacetrin.com/current
+      "
+
+  - name: Cleanup old releases (keep last 5)
+    run: |
+      ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "
+        cd /var/www/spacetrin.com/releases &&
+        ls -1dt */ | tail -n +6 | xargs -r rm -rf
+      "
+```
