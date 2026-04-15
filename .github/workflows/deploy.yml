@@ -53,3 +53,4 @@ jobs:
       - name: Cleanup old releases
         run: |
           ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /var/www/spacetrin.com/releases && ls -1dt */ | tail -n +6 | xargs -r rm -rf"
+          
